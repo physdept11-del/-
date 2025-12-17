@@ -54,6 +54,17 @@
             box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
         }
         
+        .btn-secondary {
+            background: linear-gradient(135deg, #047857 0%, #10b981 50%, #34d399 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3);
+        }
+        
         .section-title {
             position: relative;
             padding-right: 1.5rem;
@@ -69,6 +80,23 @@
             height: 70%;
             background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
             border-radius: 2px;
+        }
+        
+        .copy-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid #7dd3fc;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .notification {
+            animation: slideIn 0.5s ease;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -102,6 +130,45 @@
                         20-24 أبريل 2026
                     </span>
                 </div>
+            </div>
+        </div>
+
+        <!-- معلومات المؤتمر -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="card-gradient p-8 rounded-2xl shadow-xl text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="text-blue-600 text-5xl mb-6">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-6 text-primary">🏛️ الجهة المنظمة</h3>
+                <p class="text-secondary leading-relaxed text-lg">
+                    قسم الفيزياء - كلية العلوم<br>
+                    <span class="font-bold text-primary">جامعة المنصورة</span>
+                </p>
+            </div>
+            
+            <div class="card-gradient p-8 rounded-2xl shadow-xl text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="text-green-600 text-5xl mb-6">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-6 text-primary">📅 المواعيد النهائية</h3>
+                <p class="text-secondary leading-relaxed">
+                    <span class="font-bold text-red-600 block text-xl mb-2">تقديم الملخصات</span>
+                    <span class="text-xl font-bold text-gray-800">30 يناير 2026</span><br><br>
+                    <span class="font-bold text-red-600 block text-xl mb-2">تقديم البحث الكامل</span>
+                    <span class="text-xl font-bold text-gray-800">28 فبراير 2026</span>
+                </p>
+            </div>
+            
+            <div class="card-gradient p-8 rounded-2xl shadow-xl text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="text-purple-600 text-5xl mb-6">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-6 text-primary">👥 الفئات المستهدفة</h3>
+                <p class="text-secondary leading-relaxed text-lg">
+                    <span class="block font-semibold text-primary">الباحثون والأكاديميون</span>
+                    <span class="block font-semibold text-primary mt-2">طلاب الدراسات العليا</span>
+                    <span class="block font-semibold text-primary mt-2">مؤسسات البحث العلمي</span>
+                </p>
             </div>
         </div>
 
@@ -158,6 +225,135 @@
                                         class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
                                         placeholder="+20XXXXXXXXXX">
                                 </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-2">
+                                        <i class="fas fa-flag ml-2 text-red-500"></i>
+                                        الجنسية <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="nationality" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="مثال: مصرية، سعودية، أمريكية...">
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-2">
+                                        <i class="fas fa-passport ml-2 text-purple-500"></i>
+                                        رقم جواز السفر
+                                        <span class="text-sm text-secondary">(للمشاركين الدوليين)</span>
+                                    </label>
+                                    <input type="text" id="passport" 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="Passport Number">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- المعلومات الأكاديمية -->
+                        <div class="space-y-6">
+                            <h4 class="text-xl font-bold text-primary mb-4 bg-green-50 p-4 rounded-lg">
+                                <i class="fas fa-graduation-cap ml-3 text-green-500"></i>
+                                المعلومات الأكاديمية والمهنية
+                            </h4>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-primary font-bold mb-2">
+                                        المسمى الوظيفي / الدرجة العلمية <span class="text-red-500">*</span>
+                                    </label>
+                                    <select id="academic_title" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white">
+                                        <option value="">اختر المسمى الوظيفي</option>
+                                        <option value="أستاذ">أستاذ</option>
+                                        <option value="أستاذ مشارك">أستاذ مشارك</option>
+                                        <option value="أستاذ مساعد">أستاذ مساعد</option>
+                                        <option value="مدرس">مدرس</option>
+                                        <option value="مدرس مساعد">مدرس مساعد</option>
+                                        <option value="باحث دكتوراه">باحث دكتوراه</option>
+                                        <option value="باحث ماجستير">باحث ماجستير</option>
+                                        <option value="أخرى">أخرى</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-2">
+                                        الجامعة / المؤسسة <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="institution" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="اسم الجامعة أو المؤسسة البحثية">
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-2">
+                                        القسم / التخصص <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="department" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="مثال: قسم الفيزياء، الهندسة النووية...">
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-2">
+                                        المدينة / الدولة <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="city_country" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="مثال: القاهرة - مصر">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- نوع المشاركة -->
+                        <div class="space-y-6">
+                            <h4 class="text-xl font-bold text-primary mb-4 bg-purple-50 p-4 rounded-lg">
+                                <i class="fas fa-chalkboard-teacher ml-3 text-purple-500"></i>
+                                نوع المشاركة
+                            </h4>
+                            
+                            <div class="space-y-4">
+                                <label class="flex items-center p-4 border-2 border-blue-100 rounded-xl cursor-pointer hover:bg-blue-50 transition bg-white">
+                                    <input type="radio" name="participation_type" value="بحث كامل" required 
+                                        class="ml-3 w-5 h-5 text-blue-500">
+                                    <span class="font-medium mr-3 text-primary">بحث كامل (Oral Presentation)</span>
+                                </label>
+                                
+                                <label class="flex items-center p-4 border-2 border-green-100 rounded-xl cursor-pointer hover:bg-green-50 transition bg-white">
+                                    <input type="radio" name="participation_type" value="بوستر" required 
+                                        class="ml-3 w-5 h-5 text-green-500">
+                                    <span class="font-medium mr-3 text-primary">عرض بوستر (Poster Presentation)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- ملخص البحث -->
+                        <div class="space-y-6">
+                            <h4 class="text-xl font-bold text-primary mb-4 bg-yellow-50 p-4 rounded-lg">
+                                <i class="fas fa-file-alt ml-3 text-yellow-500"></i>
+                                ملخص البحث
+                            </h4>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-primary font-bold mb-2">
+                                        عنوان البحث (عربي)
+                                    </label>
+                                    <input type="text" id="research_title_ar" 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="عنوان البحث باللغة العربية">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-primary font-bold mb-2">
+                                        عنوان البحث (إنجليزي)
+                                    </label>
+                                    <input type="text" id="research_title_en" 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="Research Title in English">
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg border-r-4 border-blue-400">
+                                    <p class="text-sm text-blue-700">
+                                        <i class="fas fa-info-circle ml-2"></i>
+                                        يمكنك إرسال ملف الملخص لاحقاً إلى: 
+                                        <span class="font-bold">sciphyc@mans.edu.eg</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
@@ -195,6 +391,16 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="mt-4 p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border-r-4 border-blue-400">
+                            <h4 class="font-bold text-primary mb-2">
+                                <i class="fas fa-bell ml-2 text-yellow-500"></i>
+                                ملاحظة مهمة
+                            </h4>
+                            <p class="text-sm text-secondary">
+                                جميع البيانات تصل مباشرة إلى بريد المؤتمر الرسمي
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -217,40 +423,146 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- التعليمات -->
+                <div class="card-gradient rounded-2xl shadow-xl p-6">
+                    <h3 class="text-xl font-bold text-primary mb-6">
+                        <i class="fas fa-question-circle ml-3 text-green-500"></i>
+                        التعليمات
+                    </h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 ml-3"></i>
+                            <span class="text-sm text-secondary">املأ جميع الحقول المطلوبة</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 ml-3"></i>
+                            <span class="text-sm text-secondary">انسخ البيانات المعروضة</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 ml-3"></i>
+                            <span class="text-sm text-secondary">أرسلها إلى البريد الرسمي</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الفوتر -->
+        <div class="mt-16 card-gradient rounded-2xl shadow-xl p-8 text-center">
+            <div class="mb-8">
+                <h4 class="text-2xl font-bold text-primary mb-6">🏆 تحت رعاية</h4>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="text-center">
+                        <div class="text-blue-600 text-4xl mb-3">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="font-bold text-primary text-lg">جامعة المنصورة</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-green-600 text-4xl mb-3">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="font-bold text-primary text-lg">كلية العلوم</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-purple-600 text-4xl mb-3">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <div class="font-bold text-primary text-lg">قسم الفيزياء</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-100 pt-8 mt-8">
+                <p class="text-primary text-xl font-bold mb-3">
+                    المؤتمر الدولي الأول للفيزياء وتطبيقاتها في التنمية المستدامة
+                </p>
+                <p class="text-secondary mb-5">
+                    المنصورة - شرم الشيخ، مصر | 20-24 أبريل 2026
+                </p>
+                <div class="mb-6 p-4 bg-blue-50 rounded-lg inline-block">
+                    <p class="text-primary font-bold">
+                        <i class="fas fa-envelope ml-2 text-blue-500"></i>
+                        للتواصل: <span class="text-blue-600">sciphyc@mans.edu.eg</span>
+                    </p>
+                </div>
+                <p class="text-sm text-secondary">
+                    <i class="fas fa-copyright ml-2"></i>
+                    جميع الحقوق محفوظة - التصميم والتنفيذ: أ.م.د / الإمام زكريا عمر | 2026
+                </p>
+                <p class="text-sm text-secondary mt-2">
+                    The First International Conference on Physics and Its Applications for Sustainable Developments
+                </p>
             </div>
         </div>
     </div>
 
-    <!-- نافذة النجاح -->
+    <!-- نافذة النجاح مع البيانات -->
     <div id="successModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-8">
-            <div class="text-center">
-                <div class="bg-gradient-to-r from-green-400 to-green-600 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-check text-white text-4xl"></i>
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-primary">✅ تم تجهيز بيانات التسجيل</h3>
+                    <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
                 </div>
-                <h3 class="text-2xl font-bold text-primary mb-4">تم تقديم طلب المشاركة بنجاح!</h3>
-                <p class="text-secondary mb-6">
-                    شكراً <span id="userName" class="font-bold text-blue-600"></span> لتسجيلك في المؤتمر الدولي.
-                </p>
-                <div class="bg-blue-50 p-6 rounded-xl mb-6 border-r-4 border-blue-400">
-                    <p class="text-sm text-primary mb-3 font-semibold">
-                        <i class="fas fa-info-circle ml-2 text-blue-500"></i>
-                        تفاصيل مهمة:
-                    </p>
-                    <ul class="text-right text-sm text-secondary space-y-2">
-                        <li>يرجى إرسال البيانات التالية إلى: <span class="font-bold text-blue-600">sciphyc@mans.edu.eg</span></li>
-                        <li>رقم التسجيل: <span id="registrationId" class="font-bold text-primary"></span></li>
-                        <li>ستصلك رسالة تأكيد خلال 24 ساعة</li>
-                    </ul>
+                
+                <div class="space-y-6">
+                    <!-- التعليمات -->
+                    <div class="bg-green-50 p-4 rounded-lg border-r-4 border-green-500">
+                        <h4 class="font-bold text-green-800 mb-2">
+                            <i class="fas fa-info-circle ml-2"></i>
+                            خطوات الإرسال
+                        </h4>
+                        <ol class="list-decimal mr-4 text-green-700 space-y-2">
+                            <li>انسخ النص أدناه</li>
+                            <li>افتح بريدك الإلكتروني</li>
+                            <li>أرسل إلى: <span class="font-bold">sciphyc@mans.edu.eg</span></li>
+                            <li>الصق النص في محتوى البريد</li>
+                            <li>أرفع ملف الملخص (إذا لديك)</li>
+                        </ol>
+                    </div>
+                    
+                    <!-- بيانات التسجيل -->
+                    <div>
+                        <h4 class="font-bold text-primary mb-3">📋 بيانات التسجيل</h4>
+                        <div class="copy-box p-4 rounded-lg" id="registrationData">
+                            <!-- سيتم تعبئتها بالبيانات -->
+                        </div>
+                        <div class="mt-3 flex gap-3">
+                            <button onclick="copyToClipboard()" 
+                                class="btn-gradient text-white font-bold py-3 px-6 rounded-lg flex-1">
+                                <i class="fas fa-copy ml-2"></i>
+                                نسخ البيانات
+                            </button>
+                            <button onclick="openEmailClient()" 
+                                class="btn-secondary text-white font-bold py-3 px-6 rounded-lg flex-1">
+                                <i class="fas fa-envelope ml-2"></i>
+                                فتح البريد
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- تأكيد النسخ -->
+                    <div id="copySuccess" class="hidden notification bg-blue-50 p-4 rounded-lg border-r-4 border-blue-500">
+                        <p class="text-blue-700">
+                            <i class="fas fa-check-circle ml-2"></i>
+                            تم نسخ البيانات إلى الحافظة! يمكنك الآن لصقها في البريد الإلكتروني.
+                        </p>
+                    </div>
+                    
+                    <!-- زر الإغلاق -->
+                    <div class="pt-4">
+                        <button onclick="closeModal()" 
+                            class="w-full bg-gray-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-700">
+                            <i class="fas fa-check-circle ml-2"></i>
+                            تمت المتابعة
+                        </button>
+                    </div>
                 </div>
-                <button onclick="closeModal()" 
-                    class="w-full btn-gradient text-white font-bold py-3 px-6 rounded-xl hover:opacity-90 transition duration-300">
-                    <i class="fas fa-check-circle ml-2"></i>
-                    تمت المتابعة
-                </button>
-                <p class="text-sm text-secondary mt-4">
-                    للحالات الطارئة: <span class="text-blue-600 font-medium">sciphyc@mans.edu.eg</span>
-                </p>
             </div>
         </div>
     </div>
@@ -260,16 +572,37 @@
         function submitForm() {
             // جمع البيانات
             const formData = {
-                full_name_ar: document.getElementById('full_name_ar').value,
-                full_name_en: document.getElementById('full_name_en').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                timestamp: new Date().toISOString(),
+                full_name_ar: document.getElementById('full_name_ar').value.trim(),
+                full_name_en: document.getElementById('full_name_en').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                nationality: document.getElementById('nationality').value.trim(),
+                passport: document.getElementById('passport').value.trim(),
+                academic_title: document.getElementById('academic_title').value,
+                institution: document.getElementById('institution').value.trim(),
+                department: document.getElementById('department').value.trim(),
+                city_country: document.getElementById('city_country').value.trim(),
+                participation_type: document.querySelector('input[name="participation_type"]:checked')?.value,
+                research_title_ar: document.getElementById('research_title_ar').value.trim(),
+                research_title_en: document.getElementById('research_title_en').value.trim(),
+                timestamp: new Date().toLocaleString('ar-EG'),
                 registration_id: 'REG-' + Date.now().toString().slice(-8)
             };
             
-            // التحقق من البيانات
-            if (!formData.full_name_ar || !formData.full_name_en || !formData.email || !formData.phone) {
+            // التحقق من البيانات المطلوبة
+            const requiredFields = [
+                'full_name_ar', 'full_name_en', 'email', 'phone', 'nationality',
+                'academic_title', 'institution', 'department', 'city_country', 'participation_type'
+            ];
+            
+            const missingFields = [];
+            requiredFields.forEach(field => {
+                if (!formData[field]) {
+                    missingFields.push(field);
+                }
+            });
+            
+            if (missingFields.length > 0) {
                 alert('يرجى ملء جميع الحقول المطلوبة');
                 return;
             }
@@ -281,62 +614,33 @@
                 return;
             }
             
+            // تغيير حالة الزر
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.innerHTML;
-            
-            // تغيير حالة الزر
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i> جاري الإرسال...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i> جاري تجهيز البيانات...';
             submitBtn.disabled = true;
             
-            // استخدام EmailJS لإرسال البريد
-            sendEmailWithEmailJS(formData)
-                .then(result => {
-                    if (result.success) {
-                        // حفظ في localStorage
-                        saveToLocalStorage(formData);
-                        
-                        // عرض نافذة النجاح
-                        showSuccessModal(formData);
-                        
-                        // إعادة تعيين النموذج
-                        document.getElementById('conferenceForm').reset();
-                    } else {
-                        throw new Error(result.message || 'فشل في الإرسال');
-                    }
-                })
-                .catch(error => {
+            // تأخير بسيط للمحاكاة
+            setTimeout(() => {
+                try {
+                    // حفظ البيانات في localStorage
+                    saveToLocalStorage(formData);
+                    
+                    // عرض البيانات للمستخدم
+                    showRegistrationData(formData);
+                    
+                    // إعادة تعيين النموذج
+                    document.getElementById('conferenceForm').reset();
+                    
+                } catch (error) {
                     console.error('Error:', error);
-                    // بديل: عرض البيانات للمستخدم لنسخها
-                    showCopyOption(formData);
-                })
-                .finally(() => {
+                    alert('حدث خطأ في تجهيز البيانات. يرجى المحاولة مرة أخرى.');
+                } finally {
                     // إعادة تعيين الزر
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
-                });
-        }
-        
-        // دالة إرسال البريد باستخدام EmailJS
-        async function sendEmailWithEmailJS(formData) {
-            try {
-                // تهيئة EmailJS (سأستخدم خدمة مجانية)
-                // يمكنك الحصول على API Key من https://www.emailjs.com
-                
-                // هنا سنستخدم بديلاً بسيطاً
-                // سنقوم بحفظ البيانات وعرضها للمستخدم لنسخها
-                
-                return {
-                    success: true,
-                    message: 'سيتم إرسال البيانات عبر البريد الإلكتروني'
-                };
-                
-            } catch (error) {
-                console.error('EmailJS Error:', error);
-                return {
-                    success: false,
-                    message: 'فشل في إرسال البريد'
-                };
-            }
+                }
+            }, 1000);
         }
         
         // دالة حفظ البيانات محلياً
@@ -352,67 +656,100 @@
             }
         }
         
-        // دالة عرض نافذة النجاح
-        function showSuccessModal(formData) {
-            document.getElementById('userName').textContent = formData.full_name_ar;
-            document.getElementById('registrationId').textContent = formData.registration_id;
-            document.getElementById('successModal').classList.remove('hidden');
-            
-            // عرض البيانات للمستخدم لنسخها
-            showCopyOption(formData);
-        }
-        
-        // دالة عرض خيار النسخ
-        function showCopyOption(formData) {
+        // دالة عرض بيانات التسجيل
+        function showRegistrationData(formData) {
+            // إنشاء نص البريد الإلكتروني
             const emailContent = `
-                موضوع: تسجيل في مؤتمر الفيزياء الدولي 2026
-        
-                عزيزي فريق المؤتمر،
-        
+                موضوع: تسجيل في مؤتمر الفيزياء الدولي 2026 - ${formData.registration_id}
+                
+                عزيزي فريق المؤتمر الدولي للفيزياء،
+                
                 أود التسجيل في المؤتمر الدولي الأول للفيزياء وتطبيقاتها في التنمية المستدامة.
-        
-                بيانات التسجيل:
+                
+                📋 بيانات التسجيل:
+                ========================
+                🆔 رقم التسجيل: ${formData.registration_id}
+                📅 تاريخ التسجيل: ${formData.timestamp}
+                
+                👤 البيانات الشخصية:
+                --------------------
+                🏷️ الاسم الكامل (عربي): ${formData.full_name_ar}
+                🏷️ الاسم الكامل (إنجليزي): ${formData.full_name_en}
+                📧 البريد الإلكتروني: ${formData.email}
+                📱 رقم الهاتف: ${formData.phone}
+                🏳️ الجنسية: ${formData.nationality}
+                🛂 رقم جواز السفر: ${formData.passport || 'غير محدد'}
+                
+                🎓 المعلومات الأكاديمية:
                 -------------------------
-                رقم التسجيل: ${formData.registration_id}
-                الاسم الكامل (عربي): ${formData.full_name_ar}
-                الاسم الكامل (إنجليزي): ${formData.full_name_en}
-                البريد الإلكتروني: ${formData.email}
-                رقم الهاتف: ${formData.phone}
-                تاريخ التسجيل: ${new Date().toLocaleString('ar-EG')}
-                -------------------------
-        
-                أتطلع إلى مشاركتي في المؤتمر.
-        
+                🎓 المسمى الوظيفي: ${formData.academic_title}
+                🏛️ الجامعة / المؤسسة: ${formData.institution}
+                📚 القسم / التخصص: ${formData.department}
+                📍 المدينة / الدولة: ${formData.city_country}
+                
+                📝 نوع المشاركة:
+                ------------------
+                🔬 نوع المشاركة: ${formData.participation_type}
+                📄 عنوان البحث (عربي): ${formData.research_title_ar || 'غير محدد'}
+                📄 عنوان البحث (إنجليزي): ${formData.research_title_en || 'غير محدد'}
+                
+                ========================
+                
+                أتطلع إلى مشاركتي في المؤتمر وأرجو التواصل معي عبر البريد الإلكتروني أعلاه.
+                
                 مع خالص التقدير،
                 ${formData.full_name_ar}
+                
+                ---
+                📍 المؤتمر الدولي الأول للفيزياء وتطبيقاتها في التنمية المستدامة
+                📅 20-24 أبريل 2026 | 🏨 المنصورة - شرم الشيخ، مصر
+                📧 sciphyc@mans.edu.eg
             `;
             
-            // إنشاء عنصر مخفي للنسخ
-            const textarea = document.createElement('textarea');
-            textarea.value = emailContent;
-            textarea.style.position = 'fixed';
-            textarea.style.opacity = '0';
-            document.body.appendChild(textarea);
+            // عرض البيانات في النافذة
+            document.getElementById('registrationData').textContent = emailContent;
             
-            // اختيار النص
-            textarea.select();
-            textarea.setSelectionRange(0, 99999); // للأجهزة المحمولة
+            // حفظ البيانات في متغير عام للنسخ
+            window.registrationEmailContent = emailContent;
             
-            // نسخ النص
-            navigator.clipboard.writeText(emailContent).then(() => {
-                alert('تم نسخ البيانات إلى الحافظة. الرجاء إرسالها إلى sciphyc@mans.edu.eg');
+            // عرض النافذة
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+        
+        // دالة نسخ البيانات إلى الحافظة
+        function copyToClipboard() {
+            if (!window.registrationEmailContent) return;
+            
+            navigator.clipboard.writeText(window.registrationEmailContent).then(() => {
+                // عرض رسالة النجاح
+                const copySuccess = document.getElementById('copySuccess');
+                copySuccess.classList.remove('hidden');
+                
+                // إخفاء الرسالة بعد 3 ثوان
+                setTimeout(() => {
+                    copySuccess.classList.add('hidden');
+                }, 3000);
             }).catch(err => {
                 console.error('نسخ فاشل: ', err);
-                alert('الرجاء نسخ البيانات التالية وإرسالها إلى sciphyc@mans.edu.eg:\n\n' + emailContent);
+                alert('تعذر النسخ تلقائياً. يرجى تحديد النص ونسخه يدوياً.');
             });
+        }
+        
+        // دالة فتح عميل البريد
+        function openEmailClient() {
+            if (!window.registrationEmailContent) return;
             
-            // إزالة العنصر
-            document.body.removeChild(textarea);
+            const subject = encodeURIComponent('تسجيل في مؤتمر الفيزياء الدولي 2026');
+            const body = encodeURIComponent(window.registrationEmailContent);
+            const mailtoLink = `mailto:sciphyc@mans.edu.eg?subject=${subject}&body=${body}`;
+            
+            window.open(mailtoLink, '_blank');
         }
         
         // دالة إغلاق النافذة
         function closeModal() {
             document.getElementById('successModal').classList.add('hidden');
+            document.getElementById('copySuccess').classList.add('hidden');
         }
         
         // إغلاق النافذة عند النقر خارجها
@@ -420,6 +757,23 @@
             if (e.target === this) {
                 closeModal();
             }
+        });
+        
+        // إضافة تأثير عند التركيز على الحقول
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('ring-2', 'ring-blue-200', 'rounded-lg');
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('ring-2', 'ring-blue-200');
+            });
+        });
+        
+        // تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('موقع مؤتمر الفيزياء جاهز للتسجيل!');
         });
     </script>
 </body>
