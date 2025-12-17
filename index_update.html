@@ -201,7 +201,7 @@
             </h1>
             
             <h2 class="text-2xl md:text-3xl text-secondary mb-6 font-semibold">
-                The First International Conference on Physics and Its Applications for Sustainable Developments
+                The First International Conference on Physics and Its Applications for Sustainable Development
             </h2>
             
             <div class="flex flex-wrap justify-center gap-6 mt-8">
@@ -238,12 +238,16 @@
                     <i class="fas fa-calendar-day"></i>
                 </div>
                 <h3 class="font-bold text-2xl mb-6 text-primary">📅 المواعيد النهائية</h3>
-                <p class="text-secondary leading-relaxed">
-                    <span class="font-bold text-red-600 block text-xl mb-2">تقديم الملخصات</span>
-                    <span class="text-xl font-bold text-gray-800">30 يناير 2026</span><br><br>
-                    <span class="font-bold text-red-600 block text-xl mb-2">تقديم البحث الكامل</span>
-                    <span class="text-xl font-bold text-gray-800">28 فبراير 2026</span>
-                </p>
+                <div class="text-secondary leading-relaxed">
+                    <div class="mb-4">
+                        <div class="font-bold text-red-600 text-xl">30 يناير 2026</div>
+                        <div class="text-lg">تقديم الملخصات</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-red-600 text-xl">28 فبراير 2026</div>
+                        <div class="text-lg">تقديم البحث الكامل</div>
+                    </div>
+                </div>
             </div>
             
             <div class="card-gradient p-8 rounded-2xl shadow-xl text-center transform hover:-translate-y-1 transition duration-300">
@@ -455,13 +459,13 @@
                                 <div>
                                     <label class="block text-primary font-bold mb-2">
                                         ملخص البحث (عربي) <span class="text-red-500">*</span>
-                                        <span class="text-sm text-secondary font-normal">(لا يتجاوز 300 كلمة)</span>
+                                        <span class="text-sm text-secondary font-normal">(لا يتجاوز 380 كلمة)</span>
                                     </label>
-                                    <textarea id="abstract_ar" required rows="5"
+                                    <textarea id="abstract_ar" required rows="6"
                                         class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white abstract-box"
                                         placeholder="اكتب ملخص البحث باللغة العربية..."></textarea>
                                     <div class="flex justify-between items-center mt-2">
-                                        <span class="text-sm text-secondary" id="wordCountAr">0/300 كلمة</span>
+                                        <span class="text-sm text-secondary" id="wordCountAr">0/380 كلمة</span>
                                         <span class="text-sm text-blue-600">
                                             <i class="fas fa-info-circle ml-1"></i>
                                             يشمل: الأهداف، المنهجية، النتائج، الاستنتاجات
@@ -472,13 +476,13 @@
                                 <div>
                                     <label class="block text-primary font-bold mb-2">
                                         ملخص البحث (إنجليزي) <span class="text-red-500">*</span>
-                                        <span class="text-sm text-secondary font-normal">(لا يتجاوز 300 كلمة)</span>
+                                        <span class="text-sm text-secondary font-normal">(لا يتجاوز 380 كلمة)</span>
                                     </label>
-                                    <textarea id="abstract_en" required rows="5"
+                                    <textarea id="abstract_en" required rows="6"
                                         class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white abstract-box"
                                         placeholder="Write the abstract in English..."></textarea>
                                     <div class="flex justify-between items-center mt-2">
-                                        <span class="text-sm text-secondary" id="wordCountEn">0/300 كلمة</span>
+                                        <span class="text-sm text-secondary" id="wordCountEn">0/380 كلمة</span>
                                         <span class="text-sm text-blue-600">
                                             <i class="fas fa-info-circle ml-1"></i>
                                             Includes: Objectives, Methodology, Results, Conclusions
@@ -489,7 +493,7 @@
                                 <div class="bg-blue-50 p-4 rounded-lg border-r-4 border-blue-400">
                                     <p class="text-sm text-blue-700">
                                         <i class="fas fa-info-circle ml-2"></i>
-                                        ملاحظة: يجب أن يكون الملخص باللغتين العربية والإنجليزية، ولا يتجاوز 300 كلمة لكل لغة.
+                                        ملاحظة: يجب أن يكون الملخص باللغتين العربية والإنجليزية، ولا يتجاوز 380 كلمة لكل لغة.
                                     </p>
                                 </div>
                             </div>
@@ -561,28 +565,6 @@
                     </div>
                 </div>
 
-                <!-- المواعيد النهائية -->
-                <div class="card-gradient rounded-2xl shadow-xl p-6">
-                    <h3 class="text-xl font-bold text-primary mb-6">
-                        <i class="fas fa-clock ml-3 text-red-500"></i>
-                        المواعيد النهائية
-                    </h3>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-red-50 p-4 rounded-lg border-r-4 border-red-500">
-                            <div class="font-bold text-red-700">30 يناير 2026</div>
-                            <div class="text-primary mt-2">آخر موعد لتقديم الملخصات</div>
-                            <div class="text-sm text-secondary mt-1">Abstract submission deadline</div>
-                        </div>
-                        
-                        <div class="bg-red-50 p-4 rounded-lg border-r-4 border-red-500">
-                            <div class="font-bold text-red-700">28 فبراير 2026</div>
-                            <div class="text-primary mt-2">آخر موعد لتقديم البحث الكامل</div>
-                            <div class="text-sm text-secondary mt-1">Full text submission deadline</div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- تخصصات المؤتمر -->
                 <div class="card-gradient rounded-2xl shadow-xl p-6">
                     <h3 class="text-xl font-bold text-primary mb-6">
@@ -592,6 +574,40 @@
                     
                     <div class="space-y-2" id="specializationsList">
                         <!-- سيتم تعبئتها بالجافاسكريبت -->
+                    </div>
+                </div>
+
+                <!-- معلومات مهمة -->
+                <div class="card-gradient rounded-2xl shadow-xl p-6">
+                    <h3 class="text-xl font-bold text-primary mb-6">
+                        <i class="fas fa-info-circle ml-3 text-blue-500"></i>
+                        معلومات مهمة
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-calendar-check text-green-500 mt-1 ml-3"></i>
+                            <div>
+                                <div class="font-medium text-primary mb-1">تاريخ المؤتمر</div>
+                                <div class="text-secondary">20-24 أبريل 2026</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-red-500 mt-1 ml-3"></i>
+                            <div>
+                                <div class="font-medium text-primary mb-1">المكان</div>
+                                <div class="text-secondary">المنصورة - شرم الشيخ، مصر</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-university text-purple-500 mt-1 ml-3"></i>
+                            <div>
+                                <div class="font-medium text-primary mb-1">الجهة المنظمة</div>
+                                <div class="text-secondary">قسم الفيزياء - كلية العلوم<br>جامعة المنصورة</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -630,6 +646,25 @@
                 <p class="text-secondary mb-5">
                     المنصورة - شرم الشيخ، مصر | 20-24 أبريل 2026
                 </p>
+                
+                <!-- المواعيد النهائية في الفوتر (مرة واحدة فقط) -->
+                <div class="mb-5 inline-block bg-red-50 px-6 py-3 rounded-lg border-r-4 border-red-500">
+                    <p class="text-primary font-semibold">
+                        <i class="fas fa-clock ml-2 text-red-500"></i>
+                        المواعيد النهائية:
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 mt-2">
+                        <div class="text-center">
+                            <div class="font-bold text-red-600">30 يناير 2026</div>
+                            <div class="text-sm text-secondary">تقديم الملخصات</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-red-600">28 فبراير 2026</div>
+                            <div class="text-sm text-secondary">تقديم البحث الكامل</div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="mb-6 p-4 bg-blue-50 rounded-lg inline-block">
                     <p class="text-primary font-bold">
                         <i class="fas fa-envelope ml-2 text-blue-500"></i>
@@ -641,7 +676,7 @@
                     جميع الحقوق محفوظة - التصميم والتنفيذ: أ.م.د / الإمام زكريا عمر | 2026
                 </p>
                 <p class="text-sm text-secondary mt-2">
-                    The First International Conference on Physics and Its Applications for Sustainable Developments
+                    The First International Conference on Physics and Its Applications for Sustainable Development
                 </p>
             </div>
         </div>
@@ -765,7 +800,7 @@
             // تهيئة تخصصات البحث
             initSpecializations();
             
-            // تهيئة عدادات الكلمات
+            // تهيئة عدادات الكلمات (380 كلمة)
             initWordCounters();
             
             // تهيئة تخصصات الشريط الجانبي
@@ -827,7 +862,7 @@
             });
         }
 
-        // تهيئة عدادات الكلمات
+        // تهيئة عدادات الكلمات (380 كلمة)
         function initWordCounters() {
             const textareaAr = document.getElementById('abstract_ar');
             const textareaEn = document.getElementById('abstract_en');
@@ -838,9 +873,9 @@
                 textareaAr.addEventListener('input', function() {
                     const words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
                     const wordCount = words.length;
-                    counterAr.textContent = `${wordCount}/300 كلمة`;
+                    counterAr.textContent = `${wordCount}/380 كلمة`;
                     
-                    if (wordCount > 300) {
+                    if (wordCount > 380) {
                         counterAr.classList.add('text-red-600', 'font-bold');
                         this.classList.add('border-red-300');
                     } else {
@@ -854,9 +889,9 @@
                 textareaEn.addEventListener('input', function() {
                     const words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
                     const wordCount = words.length;
-                    counterEn.textContent = `${wordCount}/300 كلمة`;
+                    counterEn.textContent = `${wordCount}/380 كلمة`;
                     
-                    if (wordCount > 300) {
+                    if (wordCount > 380) {
                         counterEn.classList.add('text-red-600', 'font-bold');
                         this.classList.add('border-red-300');
                     } else {
@@ -918,17 +953,17 @@
                 return;
             }
             
-            // التحقق من عدد كلمات الملخص
+            // التحقق من عدد كلمات الملخص (380 كلمة)
             const wordsAr = formData.abstract_ar.split(/\s+/).filter(word => word.length > 0).length;
             const wordsEn = formData.abstract_en.split(/\s+/).filter(word => word.length > 0).length;
             
-            if (wordsAr > 300) {
-                alert('⚠️ ملخص البحث العربي يتجاوز 300 كلمة');
+            if (wordsAr > 380) {
+                alert('⚠️ ملخص البحث العربي يتجاوز 380 كلمة');
                 return;
             }
             
-            if (wordsEn > 300) {
-                alert('⚠️ ملخص البحث الإنجليزي يتجاوز 300 كلمة');
+            if (wordsEn > 380) {
+                alert('⚠️ ملخص البحث الإنجليزي يتجاوز 380 كلمة');
                 return;
             }
             
@@ -961,8 +996,8 @@
                     document.getElementById('research_specialization').value = '';
                     
                     // إعادة تعيين عدادات الكلمات
-                    document.getElementById('wordCountAr').textContent = '0/300 كلمة';
-                    document.getElementById('wordCountEn').textContent = '0/300 كلمة';
+                    document.getElementById('wordCountAr').textContent = '0/380 كلمة';
+                    document.getElementById('wordCountEn').textContent = '0/380 كلمة';
                     
                 } catch (error) {
                     console.error('❌ Error:', error);
