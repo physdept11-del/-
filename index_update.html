@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المؤتمر الدولي الأول للفيزياء وتطبيقاتها في التنمية المستدامة</title>
+    
+    <!-- روابط CSS الخارجية -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ملفات CSS المحلية -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* خلفيات وألوان مخصصة تناسب المؤتمر العلمي */
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 50%, #f0f7ff 100%);
+            min-height: 100vh;
+        }
+        
+        .gradient-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0369a1 50%, #0ea5e9 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .card-gradient {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .accent-blue {
+            color: #1e40af;
+        }
+        
+        .accent-green {
+            color: #047857;
+        }
+        
+        .accent-purple {
+            color: #7c3aed;
+        }
+        
+        .text-primary {
+            color: #1e3a8a;
+        }
+        
+        .text-secondary {
+            color: #475569;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-right: 1.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 70%;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+        
+        .deadline-card {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-left: 4px solid #dc2626;
+            transition: transform 0.3s ease;
+        }
+        
+        .deadline-card:hover {
+            transform: translateX(-5px);
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+        }
+        
+        .committee-card {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border: 1px solid #ddd6fe;
+        }
+        
+        /* تخصيصات إضافية */
+        .file-info {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 1px solid #a7f3d0;
+        }
+        
+        .form-section {
+            transition: all 0.3s ease;
+        }
+        
+        .form-section:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* تحسينات للجوّال */
+        @media (max-width: 768px) {
+            .text-4xl {
+                font-size: 2rem;
+            }
+            .text-5xl {
+                font-size: 2.5rem;
+            }
+            .section-title::after {
+                height: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <!-- العنوان الرئيسي -->
+        <div class="text-center mb-12">
+            <div class="inline-block gradient-header text-white px-8 py-4 rounded-full mb-6 shadow-lg">
+                <span class="font-bold text-xl tracking-wide">المؤتمر الدولي الأول</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4 leading-tight">
+                <i class="fas fa-atom ml-3 text-blue-500"></i>
+                الفيزياء وتطبيقاتها في التنمية المستدامة
+            </h1>
+            
+            <h2 class="text-2xl md:text-3xl text-secondary mb-6 font-semibold">
+                The First International Conference on Physics and Its Applications for Sustainable Developments
+            </h2>
+            
+            <div class="flex flex-wrap justify-center gap-6 mt-8">
+                <div class="card-gradient px-8 py-4 rounded-full shadow-lg">
+                    <span class="font-bold text-primary flex items-center">
+                        <i class="fas fa-map-marker-alt ml-3 text-blue-500"></i>
+                        المنصورة - شرم الشيخ، مصر
+                    </span>
+                </div>
+                <div class="card-gradient px-8 py-4 rounded-full shadow-lg">
+                    <span class="font-bold text-primary flex items-center">
+                        <i class="fas fa-calendar-alt ml-3 text-green-500"></i>
+                        20-24 أبريل 2026
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- معلومات المؤتمر -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="card-gradient p-8 rounded-2xl shadow-xl text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="accent-blue text-5xl mb-6">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-6 text-primary">🏛️ الجهة المنظمة</h3>
+                <p class="text-secondary leading-relaxed text-lg">
+                    قسم الفيزياء - كلية العلوم<br>
+                    <span class="font-bold text-primary">جامعة المنصورة</span>
+                </p>
+            </div>
+            
+            <div class="card-gradient p-8 rounded-2xl shadow-xl text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="accent-green text-5xl mb-6">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-6 text-primary">📅 المواعيد النهائية</h3>
+                <p class="text-secondary leading-relaxed">
+                    <span class="font-bold text-red-600 block text-xl mb-2">Abstract submission deadline</span>
+                    <span class="text-xl font-bold text-gray-800">30-01-2026</span><br><br>
+                    <span class="font-bold text-red-600 block text-xl mb-2">Full text submission deadline</span>
+                    <span class="text-xl font-bold text-gray-800">28-02-2026</span>
+                </p>
+            </div>
+            
+            <div class="card-gradient p-8 rounded-2xl shadow-xl text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="accent-purple text-5xl mb-6">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-6 text-primary">👥 الفئات المستهدفة</h3>
+                <p class="text-secondary leading-relaxed text-lg">
+                    <span class="block font-semibold text-primary">الباحثون والأكاديميون</span>
+                    <span class="block font-semibold text-primary mt-2">طلاب الدراسات العليا</span>
+                    <span class="block font-semibold text-primary mt-2">مؤسسات البحث العلمي</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- المحتوى الرئيسي -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- نموذج التسجيل -->
+            <div class="lg:col-span-2">
+                <div class="card-gradient rounded-2xl shadow-xl p-8">
+                    <h3 class="text-2xl font-bold text-primary mb-8 section-title">
+                        <i class="fas fa-user-plus ml-3 text-blue-500"></i>
+                        نموذج تسجيل المشاركة
+                    </h3>
+                    
+                    <form id="conferenceForm" method="POST" action="https://formspree.io/f/xvoewjpq" enctype="multipart/form-data">
+                        <!-- حقول مخفية لـ Formspree -->
+                        <input type="hidden" name="_subject" value="تسجيل جديد في مؤتمر الفيزياء 2026">
+                        <input type="hidden" name="_replyto" id="_replyto">
+                        <input type="hidden" name="_cc" value="sciphyc@mans.edu.eg">
+                        <input type="hidden" name="_language" value="ar">
+                        
+                        <!-- القسم 1: البيانات الشخصية -->
+                        <div class="mb-12 form-section">
+                            <h4 class="text-xl font-bold text-primary mb-6 bg-blue-50 p-5 rounded-lg border-r-4 border-blue-500">
+                                <i class="fas fa-id-card ml-3 text-blue-500"></i>
+                                البيانات الشخصية
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        الاسم الكامل (عربي) <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="full_name_ar" name="full_name_ar" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="الاسم الثلاثي باللغة العربية"
+                                        value="الإمام زكريا الإمام عمر"
+                                        onchange="updateHiddenEmail()">
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        الاسم الكامل (إنجليزي) <span class="text-red-500">*</span>
+                                        <span class="block text-sm text-secondary font-normal mt-1">(كما سيظهر في الشهادة والمطبوعات)</span>
+                                    </label>
+                                    <input type="text" id="full_name_en" name="full_name_en" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="Full Name in English (as in passport)">
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        <i class="fas fa-envelope ml-2 text-blue-500"></i>
+                                        البريد الإلكتروني <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="example@university.edu"
+                                        onchange="updateHiddenEmail()">
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        <i class="fas fa-phone ml-2 text-green-500"></i>
+                                        رقم الهاتف <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="+20XXXXXXXXXX">
+                                    <p class="text-sm text-secondary mt-1">يرجى إدخال الرقم مع كود الدولة</p>
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        <i class="fas fa-flag ml-2 text-red-500"></i>
+                                        الجنسية <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="nationality" name="nationality" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="مثال: مصرية، سعودية، أمريكية...">
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        <i class="fas fa-passport ml-2 text-purple-500"></i>
+                                        رقم جواز السفر
+                                        <span class="text-sm text-secondary font-normal">(للمشاركين الدوليين)</span>
+                                    </label>
+                                    <input type="text" id="passport" name="passport" 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="Passport Number">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- القسم 2: المعلومات الأكاديمية -->
+                        <div class="mb-12 form-section">
+                            <h4 class="text-xl font-bold text-primary mb-6 bg-green-50 p-5 rounded-lg border-r-4 border-green-500">
+                                <i class="fas fa-graduation-cap ml-3 text-green-500"></i>
+                                المعلومات الأكاديمية والمهنية
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        <i class="fas fa-user-tie ml-2 text-blue-500"></i>
+                                        المسمى الوظيفي / الدرجة العلمية <span class="text-red-500">*</span>
+                                    </label>
+                                    <select id="academic_title" name="academic_title" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white">
+                                        <option value="">اختر المسمى الوظيفي</option>
+                                        <option value="أستاذ">أستاذ</option>
+                                        <option value="أستاذ مشارك">أستاذ مشارك</option>
+                                        <option value="أستاذ مساعد">أستاذ مساعد</option>
+                                        <option value="مدرس">مدرس</option>
+                                        <option value="مدرس مساعد">مدرس مساعد</option>
+                                        <option value="باحث دكتوراه">باحث دكتوراه</option>
+                                        <option value="باحث ماجستير">باحث ماجستير</option>
+                                        <option value="أخرى">أخرى</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        <i class="fas fa-building ml-2 text-green-500"></i>
+                                        الجامعة / المؤسسة <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="institution" name="institution" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="اسم الجامعة أو المؤسسة البحثية">
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        <i class="fas fa-atom ml-2 text-purple-500"></i>
+                                        القسم / التخصص <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="department" name="department" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="مثال: قسم الفيزياء، الهندسة النووية...">
+                                </div>
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        <i class="fas fa-map-marker-alt ml-2 text-red-500"></i>
+                                        المدينة / الدولة <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" id="city_country" name="city_country" required 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="مثال: القاهرة - مصر">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- القسم 3: نوع المشاركة -->
+                        <div class="mb-12 form-section">
+                            <h4 class="text-xl font-bold text-primary mb-6 bg-purple-50 p-5 rounded-lg border-r-4 border-purple-500">
+                                <i class="fas fa-chalkboard-teacher ml-3 text-purple-500"></i>
+                                نوع المشاركة
+                            </h4>
+                            <div class="space-y-4">
+                                <label class="flex items-start p-6 border-2 border-blue-100 rounded-xl cursor-pointer hover:bg-blue-50 transition duration-200 bg-white">
+                                    <input type="radio" name="participation_type" value="بحث كامل" required 
+                                        class="mt-1 ml-4 w-6 h-6 text-blue-500">
+                                    <div class="flex-1">
+                                        <span class="font-bold text-xl block text-primary">بحث كامل (Oral Presentation)</span>
+                                        <p class="text-secondary mt-2">تقديم بحث كامل في جلسات المؤتمر (15 دقيقة عرض + 5 دقيقة مناقشة)</p>
+                                        <div class="mt-3 bg-blue-50 p-4 rounded-lg border-r-2 border-blue-300">
+                                            <p class="text-sm text-blue-700">
+                                                <i class="fas fa-info-circle ml-2"></i>
+                                                يتطلب تقديم ملخص البحث أولاً ثم البحث الكامل وفق المواعيد النهائية
+                                            </p>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="flex items-start p-6 border-2 border-green-100 rounded-xl cursor-pointer hover:bg-green-50 transition duration-200 bg-white">
+                                    <input type="radio" name="participation_type" value="بوستر" required 
+                                        class="mt-1 ml-4 w-6 h-6 text-green-500">
+                                    <div class="flex-1">
+                                        <span class="font-bold text-xl block text-primary">عرض بوستر (Poster Presentation)</span>
+                                        <p class="text-secondary mt-2">عرض البحث في جلسة الملصقات العلمية</p>
+                                        <div class="mt-3 bg-green-50 p-4 rounded-lg border-r-2 border-green-300">
+                                            <p class="text-sm text-green-700">
+                                                <i class="fas fa-info-circle ml-2"></i>
+                                                الأبعاد القياسية للبوستر: 90سم عرض × 120سم طول
+                                            </p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- القسم 4: ملخص البحث -->
+                        <div class="mb-12 form-section">
+                            <h4 class="text-xl font-bold text-primary mb-6 bg-yellow-50 p-5 rounded-lg border-r-4 border-yellow-500">
+                                <i class="fas fa-file-alt ml-3 text-yellow-500"></i>
+                                ملخص البحث
+                            </h4>
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        عنوان البحث (عربي)
+                                        <span class="text-sm text-secondary font-normal">(للعروض الشفوية والبوسترات)</span>
+                                    </label>
+                                    <input type="text" id="research_title_ar" name="research_title_ar" 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="عنوان البحث باللغة العربية">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        عنوان البحث (إنجليزي)
+                                        <span class="text-sm text-secondary font-normal">(للعروض الشفوية والبوسترات)</span>
+                                    </label>
+                                    <input type="text" id="research_title_en" name="research_title_en" 
+                                        class="w-full px-4 py-3 border-2 border-blue-100 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white"
+                                        placeholder="Research Title in English">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-primary font-bold mb-3 text-lg">
+                                        <i class="fas fa-file-word ml-2 text-blue-500"></i>
+                                        رفع ملخص البحث
+                                        <span class="text-sm text-secondary font-normal">(DOC أو DOCX أو PDF)</span>
+                                    </label>
+                                    <div class="border-2 border-dashed border-blue-200 rounded-lg p-8 text-center hover:border-blue-400 transition bg-blue-50">
+                                        <i class="fas fa-cloud-upload-alt text-4xl text-blue-400 mb-4"></i>
+                                        <p class="text-secondary mb-4">اسحب وأفلت ملف البحث هنا، أو انقر للاختيار</p>
+                                        <input type="file" id="abstract_file" name="abstract_file" accept=".doc,.docx,.pdf" 
+                                            class="w-full px-4 py-3 border border-blue-200 rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                                            onchange="showFileInfo(this)">
+                                        <p class="text-sm text-secondary mt-2">الحد الأقصى: 10MB | صيغ مقبولة: DOC, DOCX, PDF</p>
+                                        <div id="fileInfo" class="mt-4 hidden file-info p-4 rounded-lg">
+                                            <i class="fas fa-file-pdf text-red-500 ml-2"></i>
+                                            <span id="fileName" class="font-medium"></span>
+                                            <span id="fileSize" class="text-sm text-gray-600 mr-2"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-6 rounded-lg border-r-4 border-blue-400">
+                                    <h5 class="font-bold text-primary mb-4 text-lg">
+                                        <i class="fas fa-exclamation-circle ml-2 text-blue-500"></i>
+                                        تعليمات مهمة
+                                    </h5>
+                                    <ul class="list-disc mr-4 text-secondary space-y-3">
+                                        <li class="font-medium">يجب أن يكون الملخص باللغتين العربية والإنجليزية</li>
+                                        <li class="font-medium">لا يتجاوز الملخص 300 كلمة</li>
+                                        <li class="font-medium">يشمل الملخص: الأهداف، المنهجية، النتائج، الاستنتاجات</li>
+                                        <li class="font-medium">يتبع تنسيق المؤتمر الرسمي (سيتم توفير القالب لاحقاً)</li>
+                                        <li class="font-bold text-primary">آخر موعد لتقديم الملخصات: <span class="text-red-600">30 يناير 2026</span></li>
+                                        <li class="font-bold text-primary">آخر موعد لتقديم البحث الكامل: <span class="text-red-600">28 فبراير 2026</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- القسم 5: متطلبات - تم تبسيطه -->
+                        <div class="mb-12 form-section">
+                            <h4 class="text-xl font-bold text-primary mb-6 bg-gray-50 p-5 rounded-lg border-r-4 border-gray-400">
+                                <i class="fas fa-concierge-bell ml-3 text-gray-500"></i>
+                                متطلبات
+                            </h4>
+                            <div class="space-y-4">
+                                <label class="flex items-center p-5 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition bg-white">
+                                    <input type="checkbox" name="hotel_accommodation" value="نعم" 
+                                        class="ml-3 w-5 h-5 text-blue-500 rounded">
+                                    <span class="font-medium mr-3 text-primary text-lg">أرغب في حجز إقامة فندقية من خلال المؤتمر</span>
+                                </label>
+                                
+                                <div id="hotelDetails" class="hidden pl-8 pr-4">
+                                    <div class="bg-blue-50 p-5 rounded-lg border-r-2 border-blue-300">
+                                        <p class="text-blue-700 font-medium">
+                                            <i class="fas fa-info-circle ml-2 text-blue-500"></i>
+                                            سيتم التواصل معك لاحقاً لتأكيد الحجز وتفاصيل الفنادق المتاحة
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- الشروط والأحكام -->
+                        <div class="mb-10 p-6 bg-gray-50 rounded-xl border-2 border-gray-200 form-section">
+                            <label class="flex items-start">
+                                <input type="checkbox" id="terms" required 
+                                    class="mt-1 ml-3 w-6 h-6 text-blue-500 rounded">
+                                <span class="text-primary mr-3 text-lg font-medium">
+                                    أوافق على جمع ومعالجة بياناتي الشخصية لغرض التسجيل في المؤتمر الدولي للفيزياء. 
+                                    وأقر بأن جميع المعلومات المقدمة صحيحة وكاملة.
+                                    <span class="text-red-500">*</span>
+                                </span>
+                            </label>
+                            
+                            <div class="mt-4 p-4 bg-blue-50 rounded-lg border-r-2 border-blue-300">
+                                <p class="text-sm text-blue-700">
+                                    <i class="fas fa-shield-alt ml-2"></i>
+                                    نلتزم بحماية خصوصيتك. لن يتم مشاركة بياناتك الشخصية مع أطراف ثالثة دون موافقتك.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- زر الإرسال -->
+                        <div class="pt-4">
+                            <button type="submit" id="submitBtn" 
+                                class="w-full btn-gradient text-white font-bold py-5 px-6 rounded-xl transition duration-300 shadow-xl text-xl hover:shadow-2xl">
+                                <i class="fas fa-paper-plane ml-2"></i>
+                                إرسال طلب المشاركة
+                            </button>
+                            <p class="text-center text-secondary text-sm mt-4">
+                                <span class="text-red-500">*</span> الحقول المطلوبة
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- الشريط الجانبي -->
+            <div class="space-y-8">
+                <!-- لجنة المؤتمر -->
+                <div class="committee-card rounded-2xl shadow-xl p-6">
+                    <h3 class="text-xl font-bold text-primary mb-6">
+                        <i class="fas fa-users-cog ml-3 text-blue-500"></i>
+                        لجنة المؤتمر
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-r-4 border-blue-500 pr-4">
+                            <div class="font-bold text-blue-600 text-lg mb-2">رئيس المؤتمر</div>
+                            <div class="text-primary mt-2">
+                                <div class="font-semibold text-lg">أ.د. ايهاب عبداللطيف</div>
+                                <div class="text-sm text-secondary mt-1">عميد كلية العلوم - جامعة المنصورة</div>
+                            </div>
+                        </div>
+                        <div class="border-r-4 border-green-500 pr-4">
+                            <div class="font-bold text-green-600 text-lg mb-2">مقرر المؤتمر</div>
+                            <div class="text-primary mt-2">
+                                <div class="font-semibold text-lg">أ.د. محمد عبدالكريم البقرى</div>
+                                <div class="text-sm text-secondary mt-1">رئيس مجلس قسم الفيزياء</div>
+                            </div>
+                        </div>
+                        <div class="border-r-4 border-purple-500 pr-4">
+                            <div class="font-bold text-purple-600 text-lg mb-2">اللجنة العلمية</div>
+                            <div class="text-primary mt-2">
+                                <div class="text-sm">مجموعة من الأساتذة المتخصصين من الجامعات المصرية والعالمية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- معلومات الاتصال -->
+                <div class="contact-card rounded-2xl shadow-xl p-6">
+                    <h3 class="text-xl font-bold text-primary mb-6">
+                        <i class="fas fa-headset ml-3 text-purple-500"></i>
+                        معلومات الاتصال
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-blue-500 mt-1 ml-3 text-lg"></i>
+                            <div>
+                                <div class="font-medium text-primary mb-1">البريد الإلكتروني</div>
+                                <a href="mailto:sciphyc@mans.edu.eg" class="text-blue-600 hover:underline font-medium">
+                                    sciphyc@mans.edu.eg
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-red-500 mt-1 ml-3 text-lg"></i>
+                            <div>
+                                <div class="font-medium text-primary mb-1">المقر الرئيسي</div>
+                                <div class="text-secondary">قسم الفيزياء، كلية العلوم، جامعة المنصورة، مصر</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border-r-4 border-blue-400">
+                        <h4 class="font-bold text-primary mb-2">
+                            <i class="fas fa-bell ml-2 text-yellow-500"></i>
+                            ملاحظة مهمة
+                        </h4>
+                        <p class="text-sm text-secondary">
+                            بعد إرسال النموذج، ستتلقى تأكيداً على بريدك الإلكتروني، 
+                            وستصل جميع بياناتك إلى <strong>sciphyc@mans.edu.eg</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- المواعيد النهائية -->
+                <div class="bg-white rounded-2xl shadow-xl p-6">
+                    <h3 class="text-xl font-bold text-primary mb-6">
+                        <i class="fas fa-clock ml-3 text-red-500"></i>
+                        المواعيد النهائية
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="deadline-card p-5 rounded-lg">
+                            <div class="font-bold text-red-700 text-xl">30 يناير 2026</div>
+                            <div class="text-primary mt-2 font-semibold">آخر موعد لتقديم الملخصات</div>
+                            <div class="text-sm text-secondary mt-1">Abstract submission deadline</div>
+                        </div>
+                        
+                        <div class="deadline-card p-5 rounded-lg">
+                            <div class="font-bold text-red-700 text-xl">28 فبراير 2026</div>
+                            <div class="text-primary mt-2 font-semibold">آخر موعد لتقديم البحث الكامل</div>
+                            <div class="text-sm text-secondary mt-1">Full text submission deadline</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الفوتر -->
+        <div class="mt-16 card-gradient rounded-2xl shadow-xl p-8 text-center">
+            <div class="mb-8">
+                <h4 class="text-2xl font-bold text-primary mb-6">🏆 تحت رعاية</h4>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="text-center">
+                        <div class="accent-blue text-4xl mb-3">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="font-bold text-primary text-lg">جامعة المنصورة</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="accent-green text-4xl mb-3">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="font-bold text-primary text-lg">كلية العلوم</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="accent-purple text-4xl mb-3">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <div class="font-bold text-primary text-lg">قسم الفيزياء</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-100 pt-8 mt-8">
+                <p class="text-primary text-xl font-bold mb-3">
+                    المؤتمر الدولي الأول للفيزياء وتطبيقاتها في التنمية المستدامة
+                </p>
+                <p class="text-secondary mb-5">
+                    المنصورة - شرم الشيخ، مصر | 20-24 أبريل 2026
+                </p>
+                <div class="mb-5">
+                    <p class="text-secondary font-semibold">
+                        <span class="text-red-600 font-bold">Abstract submission deadline</span> 30-01-2026
+                    </p>
+                    <p class="text-secondary font-semibold">
+                        <span class="text-red-600 font-bold">Full text submission deadline</span> 28-02-2026
+                    </p>
+                </div>
+                <div class="mb-6 p-4 bg-blue-50 rounded-lg inline-block">
+                    <p class="text-primary font-bold">
+                        <i class="fas fa-envelope ml-2 text-blue-500"></i>
+                        للتواصل: <a href="mailto:sciphyc@mans.edu.eg" class="text-blue-600 hover:underline">sciphyc@mans.edu.eg</a>
+                    </p>
+                </div>
+                <p class="text-sm text-secondary">
+                    <i class="fas fa-copyright ml-2"></i>
+                    جميع الحقوق محفوظة - التصميم والتنفيذ: أ.م.د / الإمام زكريا عمر | 2026
+                </p>
+                <p class="text-sm text-secondary mt-2">
+                    The First International Conference on Physics and Its Applications for Sustainable Developments
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة النجاح -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+            <div class="text-center">
+                <div class="bg-gradient-to-r from-green-400 to-green-600 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-white text-4xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-primary mb-4">تم تقديم طلب المشاركة بنجاح! ✅</h3>
+                <p class="text-secondary mb-6">
+                    شكراً <span id="userName" class="font-bold text-blue-600"></span> لتسجيلك في المؤتمر الدولي.
+                </p>
+                <div class="bg-blue-50 p-6 rounded-xl mb-6 border-r-4 border-blue-400">
+                    <p class="text-sm text-primary mb-3 font-semibold">
+                        <i class="fas fa-info-circle ml-2 text-blue-500"></i>
+                        تفاصيل مهمة:
+                    </p>
+                    <ul class="text-right text-sm text-secondary space-y-2">
+                        <li>تم إرسال تأكيد إلى بريدك الإلكتروني</li>
+                        <li>رقم تسجيلك: <span id="registrationId" class="font-bold text-primary">REG-</span></li>
+                        <li>ستصلك رسالة تأكيد على <span id="userEmail" class="font-medium text-blue-500"></span></li>
+                        <li>تم إرسال نسخة إلى <span class="font-bold text-blue-600">sciphyc@mans.edu.eg</span></li>
+                        <li>تحقق من بريدك (والمجلد Spam) للتحديثات</li>
+                        <li>آخر موعد لتقديم البحث الكامل: <span class="font-bold text-red-600">28 فبراير 2026</span></li>
+                    </ul>
+                </div>
+                <button onclick="closeModal()" 
+                    class="w-full btn-gradient text-white font-bold py-3 px-6 rounded-xl hover:opacity-90 transition duration-300">
+                    <i class="fas fa-check-circle ml-2"></i>
+                    تمت المتابعة
+                </button>
+                <p class="text-sm text-secondary mt-4">
+                    للحالات الطارئة: <a href="mailto:sciphyc@mans.edu.eg" class="text-blue-600 hover:underline font-medium">sciphyc@mans.edu.eg</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // تفعيل تفاصيل الفندق عند الاختيار
+        document.addEventListener('DOMContentLoaded', function() {
+            const hotelCheckbox = document.querySelector('input[name="hotel_accommodation"]');
+            const hotelDetails = document.getElementById('hotelDetails');
+            
+            if (hotelCheckbox && hotelDetails) {
+                hotelCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        hotelDetails.classList.remove('hidden');
+                    } else {
+                        hotelDetails.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // إضافة بعض الرسوم المتحركة عند تحميل الصفحة
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.card-gradient');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 100);
+            
+            // تفعيل Formspree
+            initFormspree();
+        });
+        
+        function initFormspree() {
+            const form = document.getElementById('conferenceForm');
+            if (!form) return;
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!form.checkValidity()) {
+                    alert('يرجى ملء جميع الحقول المطلوبة بشكل صحيح');
+                    return;
+                }
+                
+                const submitBtn = document.getElementById('submitBtn');
+                const originalText = submitBtn.innerHTML;
+                
+                // تحديث حقل الرد
+                const emailField = document.getElementById('email');
+                const replyToField = document.getElementById('_replyto');
+                if (emailField && replyToField) {
+                    replyToField.value = emailField.value;
+                }
+                
+                // التحقق من الملف
+                const fileInput = document.getElementById('abstract_file');
+                if (fileInput && fileInput.files.length > 0) {
+                    const file = fileInput.files[0];
+                    const maxSize = 10 * 1024 * 1024; // 10MB
+                    
+                    if (file.size > maxSize) {
+                        alert('حجم الملف يتجاوز الحد المسموح (10MB)');
+                        return;
+                    }
+                    
+                    const allowedTypes = [
+                        'application/pdf',
+                        'application/msword',
+                        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                    ];
+                    
+                    if (!allowedTypes.includes(file.type)) {
+                        alert('نوع الملف غير مدعوم. يرجى رفع ملف PDF أو Word (DOC/DOCX)');
+                        return;
+                    }
+                }
+                
+                // تغيير حالة الزر
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i> جاري الإرسال...';
+                submitBtn.disabled = true;
+                
+                // جمع بيانات النموذج
+                const formData = new FormData(form);
+                
+                // إرسال البيانات
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // عرض رسالة النجاح
+                        showSuccessModal();
+                        
+                        // إعادة تعيين النموذج
+                        form.reset();
+                        
+                        // إعادة تعيين عرض الملف
+                        const fileInfo = document.getElementById('fileInfo');
+                        if (fileInfo) fileInfo.classList.add('hidden');
+                        
+                        // إعادة تعيين خيار الفندق
+                        if (hotelDetails) hotelDetails.classList.add('hidden');
+                        
+                        // تسجيل في localStorage
+                        const submissionData = {
+                            timestamp: new Date().toISOString(),
+                            name: document.getElementById('full_name_ar').value,
+                            email: document.getElementById('email').value,
+                            registrationId: 'REG-' + Date.now().toString().slice(-8)
+                        };
+                        
+                        const submissions = JSON.parse(localStorage.getItem('conference_submissions') || '[]');
+                        submissions.push(submissionData);
+                        localStorage.setItem('conference_submissions', JSON.stringify(submissions));
+                        
+                    } else {
+                        throw new Error('فشل في إرسال النموذج');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو إرسال البيانات مباشرة إلى sciphyc@mans.edu.eg');
+                })
+                .finally(() => {
+                    // إعادة تعيين الزر
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+        
+        function showSuccessModal() {
+            // جمع البيانات
+            const userName = document.getElementById('full_name_ar').value || document.getElementById('full_name_en').value;
+            const userEmail = document.getElementById('email').value;
+            const registrationId = 'REG-' + Date.now().toString().slice(-8);
+            
+            // تعبئة البيانات
+            document.getElementById('userName').textContent = userName;
+            document.getElementById('userEmail').textContent = userEmail;
+            document.getElementById('registrationId').textContent = registrationId;
+            
+            // عرض النافذة
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 50);
+            
+            // إرسال إشعار إضافي (اختياري)
+            sendAdditionalNotification(userName, userEmail, registrationId);
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+        
+        function showFileInfo(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                const fileSize = (file.size / 1024 / 1024).toFixed(2); // MB
+                
+                const fileInfo = document.getElementById('fileInfo');
+                const fileName = document.getElementById('fileName');
+                const fileSizeSpan = document.getElementById('fileSize');
+                
+                fileName.textContent = file.name;
+                fileSizeSpan.textContent = `(${fileSize} MB)`;
+                
+                // تغيير الأيقونة حسب نوع الملف
+                const icon = fileInfo.querySelector('i');
+                if (file.type.includes('pdf')) {
+                    icon.className = 'fas fa-file-pdf text-red-500 ml-2';
+                } else if (file.type.includes('word') || file.type.includes('document')) {
+                    icon.className = 'fas fa-file-word text-blue-500 ml-2';
+                }
+                
+                fileInfo.classList.remove('hidden');
+            }
+        }
+        
+        function updateHiddenEmail() {
+            const emailField = document.getElementById('email');
+            const replyToField = document.getElementById('_replyto');
+            if (emailField && replyToField) {
+                replyToField.value = emailField.value;
+            }
+        }
+        
+        function sendAdditionalNotification(name, email, registrationId) {
+            // إرسال إشعار إضافي عبر API (اختياري)
+            fetch('/api/notification.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    registration_id: registrationId,
+                    timestamp: new Date().toISOString(),
+                    action: 'registration_success'
+                })
+            })
+            .catch(error => console.error('Notification error:', error));
+        }
+        
+        // إغلاق النافذة عند النقر خارجها
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // إضافة تأثير عند التركيز على الحقول
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('ring-2', 'ring-blue-200', 'rounded-lg');
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('ring-2', 'ring-blue-200');
+            });
+        });
+    </script>
+</body>
+</html>
