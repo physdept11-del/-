@@ -1,0 +1,37 @@
+# ملفات النظام
+.DS_Store
+Thumbs.db
+
+# ملفات بيئة التشغيل
+.env
+config/database-config.php
+config/mail-config.php
+
+# المرفقات والمرفوعات
+/uploads/*
+!/uploads/.gitkeep
+
+# سجلات الأخطاء
+*.log
+logs/
+
+# قاعدة البيانات المحلية
+*.db
+*.sqlite
+
+# ملفات التبعيات
+vendor/
+node_modules/
+
+# ملفات الترجمة المؤقتة
+cache/
+
+# ملفات IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ملفات النظام التشغيلي
+__pycache__/
+*.py[cod]
