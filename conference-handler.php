@@ -1,114 +1,105 @@
 <?php
+// ملف إرسال البريد الإلكتروني عبر الخادم
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// إعدادات البريد
-require_once '../config/mail-config.php';
-require_once '../config/database-config.php';
-require_once 'mailer.php';
-
-// الاستجابة الافتراضية
-$response = [
-    'success' => false,
-    'message' => '',
-    'registration_id' => '',
-    'email_sent' => false
-];
-
-// التحقق من طريقة الطلب
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $response['message'] = 'طريقة الطلب غير مسموحة';
-    echo json_encode($response, JSON_UNESCAPED_UNICODE);
-    exit;
-}
-
-// الحصول على البيانات
+// استقبال البيانات
 $data = json_decode(file_get_contents('php://input'), true);
 
 if (!$data) {
-    $data = $_POST; // في حالة إرسال form-data
+    echo json_encode(['success' => false, 'message' => 'لم يتم استلام البيانات']);
+    exit;
 }
 
-// التحقق من البيانات المطلوبة
-$required_fields = [
-    'full_name_ar', 'full_name_en', 'email', 'phone',
-    'nationality', 'academic_title', 'institution',
-    'department', 'city_country', 'participation_type',
-    'research_specialization', 'research_title_ar',
-    'research_title_en', 'abstract_ar', 'abstract_en'
-];
+// إعدادات البريد
+$to = "sciphyc@mans.edu.eg";
+$subject = "تسجيل جديد في مؤتمر الفيزياء الدولي - " . ($data['registration_id'] ?? 'غير محدد');
 
-foreach ($required_fields as $field) {
-    if (empty($data[$field])) {
-        $response['message'] = 'الحقل ' . $field . ' مطلوب';
-        echo json_encode($response, JSON_UNESCAPED_UNICODE);
-        exit;
-    }
+// بناء محتوى البريد
+$message = "
+<!DOCTYPE html>
+<html dir='rtl' lang='ar'>
+<head>
+    <meta charset='UTF-8'>
+    <style>
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #0369a1); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+        .content { background: #f8fafc; padding: 30px; border: 1px solid #e2e8f0; }
+        .section { margin-bottom: 20px; padding: 15px; background: white; border-radius: 5px; border-right: 4px solid #3b82f6; }
+        .label { font-weight: bold; color: #1e3a8a; }
+        .footer { background: #f1f5f9; padding: 20px; text-align: center; color: #64748b; font-size: 14px; border-radius: 0 0 10px 10px; }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 10px; border-bottom: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>تسجيل جديد في مؤتمر الفيزياء الدولي 2026</h1>
+            <p>رقم التسجيل: " . ($data['registration_id'] ?? '') . "</p>
+        </div>
+        
+        <div class='content'>
+            <div class='section'>
+                <h2>👤 البيانات الشخصية</h2>
+                <table>
+                    <tr><td class='label'>الاسم الكامل (عربي):</td><td>" . ($data['full_name_ar'] ?? '') . "</td></tr>
+                    <tr><td class='label'>الاسم الكامل (إنجليزي):</td><td>" . ($data['full_name_en'] ?? '') . "</td></tr>
+                    <tr><td class='label'>البريد الإلكتروني:</td><td>" . ($data['email'] ?? '') . "</td></tr>
+                    <tr><td class='label'>رقم الهاتف:</td><td>" . ($data['phone'] ?? '') . "</td></tr>
+                    <tr><td class='label'>الجنسية:</td><td>" . ($data['nationality'] ?? '') . "</td></tr>
+                </table>
+            </div>
+            
+            <div class='section'>
+                <h2>🎓 المعلومات الأكاديمية</h2>
+                <table>
+                    <tr><td class='label'>المسمى الوظيفي:</td><td>" . ($data['academic_title'] ?? '') . "</td></tr>
+                    <tr><td class='label'>الجامعة / المؤسسة:</td><td>" . ($data['institution'] ?? '') . "</td></tr>
+                    <tr><td class='label'>القسم / التخصص:</td><td>" . ($data['department'] ?? '') . "</td></tr>
+                    <tr><td class='label'>المدينة / الدولة:</td><td>" . ($data['city_country'] ?? '') . "</td></tr>
+                </table>
+            </div>
+            
+            <div class='section'>
+                <h2>🔬 معلومات المشاركة</h2>
+                <table>
+                    <tr><td class='label'>نوع المشاركة:</td><td>" . ($data['participation_type'] ?? '') . "</td></tr>
+                    <tr><td class='label'>تخصص البحث:</td><td>" . ($data['research_specialization'] ?? '') . "</td></tr>
+                    <tr><td class='label'>عنوان البحث (عربي):</td><td>" . ($data['research_title_ar'] ?? '') . "</td></tr>
+                    <tr><td class='label'>عنوان البحث (إنجليزي):</td><td>" . ($data['research_title_en'] ?? '') . "</td></tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class='footer'>
+            <p>تم استلام التسجيل في: " . ($data['timestamp'] ?? '') . "</p>
+            <p>© 2026 - المؤتمر الدولي الأول للفيزياء وتطبيقاتها في التنمية المستدامة</p>
+        </div>
+    </div>
+</body>
+</html>
+";
+
+// إعدادات البريد
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
+$headers .= "From: مؤتمر الفيزياء الدولي <noreply@physics-conference.edu>" . "\r\n";
+$headers .= "Reply-To: " . ($data['email'] ?? '') . "\r\n";
+
+// إرسال البريد
+if (mail($to, $subject, $message, $headers)) {
+    echo json_encode([
+        'success' => true,
+        'message' => 'تم إرسال البيانات بنجاح إلى بريد المؤتمر'
+    ]);
+} else {
+    echo json_encode([
+        'success' => false,
+        'message' => 'حدث خطأ في إرسال البريد'
+    ]);
 }
-
-// تنظيف البيانات
-function clean_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
-    return $data;
-}
-
-foreach ($data as $key => $value) {
-    $data[$key] = clean_input($value);
-}
-
-// إنشاء رقم تسجيل فريد
-$registration_id = 'REG-' . date('Ymd') . '-' . substr(md5(uniqid()), 0, 6);
-$data['registration_id'] = $registration_id;
-$data['registration_date'] = date('Y-m-d H:i:s');
-$data['ip_address'] = $_SERVER['REMOTE_ADDR'];
-
-// حفظ في قاعدة البيانات
-try {
-    $conn = new PDO(
-        "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
-        DB_USER,
-        DB_PASS
-    );
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    $sql = "INSERT INTO conference_registrations (
-        registration_id, full_name_ar, full_name_en, email, phone,
-        nationality, passport, academic_title, institution, department,
-        city_country, participation_type, research_specialization,
-        research_title_ar, research_title_en, abstract_ar, abstract_en,
-        registration_date, ip_address, status
-    ) VALUES (
-        :registration_id, :full_name_ar, :full_name_en, :email, :phone,
-        :nationality, :passport, :academic_title, :institution, :department,
-        :city_country, :participation_type, :research_specialization,
-        :research_title_ar, :research_title_en, :abstract_ar, :abstract_en,
-        :registration_date, :ip_address, 'pending'
-    )";
-    
-    $stmt = $conn->prepare($sql);
-    $stmt->execute($data);
-    
-    // إرسال البريد الإلكتروني
-    $mailer = new ConferenceMailer();
-    $email_sent = $mailer->sendRegistrationConfirmation($data);
-    
-    $response['success'] = true;
-    $response['message'] = 'تم تسجيل مشاركتك بنجاح';
-    $response['registration_id'] = $registration_id;
-    $response['email_sent'] = $email_sent;
-    
-} catch (PDOException $e) {
-    $response['message'] = 'خطأ في قاعدة البيانات: ' . $e->getMessage();
-    error_log('Database Error: ' . $e->getMessage());
-} catch (Exception $e) {
-    $response['message'] = 'حدث خطأ: ' . $e->getMessage();
-    error_log('General Error: ' . $e->getMessage());
-}
-
-// إرجاع الاستجابة
-echo json_encode($response, JSON_UNESCAPED_UNICODE);
 ?>
