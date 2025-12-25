@@ -14,7 +14,7 @@ if (!$data) {
 }
 
 // إعدادات البريد
-$to = "sciphyc@mans.edu.eg";
+$to = "phys.dept11@gmail.com";
 $subject = "تسجيل جديد في مؤتمر الفيزياء الدولي - " . ($data['registration_id'] ?? 'غير محدد');
 
 // بناء محتوى البريد
