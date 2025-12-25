@@ -2,12 +2,12 @@
 // إعدادات البريد الإلكتروني
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);
-define('SMTP_USER', 'sciphyc@mans.edu.eg');
+define('SMTP_USER', 'phys.dept11@gmail.com');
 define('SMTP_PASS', 'your-secure-password');
 define('SMTP_SECURE', 'tls');
 
 // عناوين البريد
-define('FROM_EMAIL', 'sciphyc@mans.edu.eg');
+define('FROM_EMAIL', 'phys.dept11@gmail.com');
 define('FROM_NAME', 'مؤتمر الفيزياء الدولي');
 define('ADMIN_EMAIL', 'admin@physics-conference.edu');
 define('REPLY_TO', 'noreply@physics-conference.edu');
