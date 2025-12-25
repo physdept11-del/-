@@ -31,7 +31,7 @@ switch ($action) {
 }
 
 function sendRegistrationEmail($data) {
-    $to = 'sciphyc@mans.edu.eg';
+    $to = 'phys.dept11@gmail.com';
     $subject = '📋 تسجيل جديد في مؤتمر الفيزياء الدولي';
     
     $message = createRegistrationEmail($data);
@@ -54,7 +54,7 @@ function sendRegistrationEmail($data) {
 }
 
 function sendFileNotification($data) {
-    $to = 'sciphyc@mans.edu.eg';
+    $to = 'phys.dept11@gmail.com';
     $subject = '📎 ملف ملخص مرفق - مؤتمر الفيزياء';
     
     $message = "
