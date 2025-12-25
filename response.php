@@ -31,7 +31,7 @@ switch ($action) {
 }
 
 function sendRegistrationEmail($data) {
-    $to = 'sciphyc@mans.edu.eg';
+    $to = 'phys.dept11@gmail.com';
     $subject = '📋 تسجيل جديد في مؤتمر الفيزياء الدولي';
     
     $message = createRegistrationEmail($data);
@@ -39,7 +39,7 @@ function sendRegistrationEmail($data) {
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     $headers .= "From: مؤتمر الفيزياء <noreply@physics-conference.mans.edu.eg>\r\n";
-    $headers .= "Reply-To: " . ($data['email'] ?? 'sciphyc@mans.edu.eg') . "\r\n";
+    $headers .= "Reply-To: " . ($data['email'] ?? 'phys.dept11@gmail.com') . "\r\n";
     $headers .= "X-Priority: 1\r\n";
     
     if (mail($to, $subject, $message, $headers)) {
@@ -54,7 +54,7 @@ function sendRegistrationEmail($data) {
 }
 
 function sendFileNotification($data) {
-    $to = 'sciphyc@mans.edu.eg';
+    $to = 'phys.dept11@gmail.com';
     $subject = '📎 ملف ملخص مرفق - مؤتمر الفيزياء';
     
     $message = "
@@ -191,7 +191,7 @@ function sendConfirmationEmail($data) {
     
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: مؤتمر الفيزياء <sciphyc@mans.edu.eg>\r\n";
+    $headers .= "From: مؤتمر الفيزياء <phys.dept11@gmail.com>\r\n";
     
     mail($to, $subject, $message, $headers);
 }
